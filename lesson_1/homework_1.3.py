@@ -3,5 +3,10 @@
 Считаем 3 + 33 + 333 = 369.
 """
 
-n = input('Введи число: ')
-print(f'Число n = {n}. Сумма чисел n + nn + nnn равна: {int(n) + int(n + n) + int(n + n + n):>4}')
+while True:
+    n = input('Введи число: ')
+    if n.isdigit():
+        print(f'Число n = {n}. Сумма чисел n + nn + nnn равна: {int(n) + int(n + n) + int(n + n + n):>4}')
+        break
+    else:
+        print('Вы ввели что-то другое...')
