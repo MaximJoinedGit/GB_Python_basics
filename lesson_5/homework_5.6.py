@@ -12,12 +12,10 @@
 {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 """
 
-import re
-
 subject = {}
 with open('homework_5.6.txt', 'r', encoding='utf-8') as r:
     for classes in r:
-        line = classes.split(':')
-        hours = re.findall(r'[0-9]+', line[1])
-        subject[line[0]] = sum(map(int, hours))
+        data = classes.split(':')
+        hours = [int(num.split('(')[0]) for num in data[1].split() if num.split('(')[0].isdigit()]
+        subject[data[0]] = sum(hours)
 print(subject)
