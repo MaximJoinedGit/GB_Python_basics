@@ -14,13 +14,12 @@ from random import randint, choice
 
 
 class Car:
-    speed = randint(20, 80)
-    color = choice(['Red', 'Green', 'Blue', 'Yellow', 'Black', 'White', 'Purple'])
-    direction = choice(['left', 'right'])
-
     def __init__(self, name: str, is_police: bool):
         self.name = name
         self.is_police = is_police
+        self.speed = randint(20, 80)
+        self.color = choice(['Red', 'Green', 'Blue', 'Yellow', 'Black', 'White', 'Purple'])
+        self.direction = choice(['left', 'right'])
 
     def go(self):
         print('The car started driving.')
